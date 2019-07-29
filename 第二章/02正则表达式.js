@@ -6,4 +6,6 @@ function code(text) {
     return res ? text.length : 0
 }
 
+//?????
+
 console.log(code(t));
