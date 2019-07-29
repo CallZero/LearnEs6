@@ -6,6 +6,7 @@ function code(text) {
     return res ? text.length : 0
 }
 
+//这行去掉
 //?????
 
 console.log(code(t));
