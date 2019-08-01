@@ -8,12 +8,14 @@ function code(text) {
 
 console.log(code(t));
 
+//检测是否支持u修饰符
+//y修饰符也可以这样检测
 function hasRegExpU() {
     try {
         var pattern = new RegExp(".", "u")
+        //var pattern = new RegExp(".", "y")  检测y修饰符
         return true
-    }
-    catch (ex) {
+    } catch (ex) {
         return false
     }
 }
@@ -34,4 +36,28 @@ console.log(ren.test(t))
 let str = '?'
 console.log(str.repeat(10))
 
+var s = 'aaa_aba_a';
+var r1 = /a+/g;
+var r2 = /a+_/y;
 
+
+console.log(r1.exec(s)) //["aaa", index: 0, input: "aaa_aa_a"]
+console.log(r2.exec(s)) //["aaa_", index: 0, input: "aaa_aa_a"]
+console.log(r1.exec(s)) //["aa", index: 4, input: "aaa_aa_a"]
+console.log(r2.exec(s)) //["aa_", index: 4, input: "aaa_aa_a"]
+console.log(r1.exec(s)) //["a", index: 7, input: "aaa_aa_a"]
+console.log(r2.exec(s)) //null
+
+//匹配ab且不区分大小写 i修饰符：不区分大小写
+let re1 = /ab/i
+
+let re2 = new RegExp(re1, 'g')
+
+console.log(re1.toString());
+console.log(re2.toString());
+
+//访问正则的source属性，获取正则的内容
+console.log(re1.source);
+
+//访问正则的flags属性，获取正则的修饰符
+console.log(re1.flags);
