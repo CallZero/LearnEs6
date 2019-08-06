@@ -98,6 +98,8 @@ console.log(person.getName()); // "Nicholas"
 var result = values.sort((a, b) => a - b);
 ```
 
+## 尾调用优化
+
 ### 当满足以下条件时，尾调用优化会清除当前栈帧并再次利用它，而不是为尾调用创建新的栈帧：
 
 1. 尾调用不能引用当前栈帧中的变量（意味着该函数不能是闭包）；

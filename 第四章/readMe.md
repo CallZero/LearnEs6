@@ -75,7 +75,7 @@ console.log(person['first name']); // "Nicholas"
 console.log(person['last name']); // "Zakas"
 ```
 
-## Object.assign() 方法
+## Object.assign() 方法用来复制一个“类”
 
 ```javascript
 //ES5中使用的方法
@@ -140,7 +140,7 @@ console.log(receiver); // "{ type: 'css', name: 'file.js', abc: 222 }"
 
 ## Object.assign() 并未在接收者上创建访问器属性
 
-### Object.getOwnPropertyDescriptor
+### Object.getOwnPropertyDescriptor（）方法介绍
 
 #### 如果指定的属性存在于对象上，则返回其属性描述符对象（property descriptor），否则返回 undefined。
 
